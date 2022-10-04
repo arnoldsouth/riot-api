@@ -27,6 +27,7 @@ import {
   Center,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import kaneki from '../../assets/kaneki.gif';
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -51,7 +52,7 @@ export default function Navbar() {
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box>Logo</Box>
+          <Box>RIOT API</Box>
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
@@ -67,18 +68,12 @@ export default function Navbar() {
                   cursor={'pointer'}
                   minW={0}
                 >
-                  <Avatar
-                    size={'sm'}
-                    src={'https://avatars.dicebear.com/api/male/username.svg'}
-                  />
+                  <Avatar size={'sm'} src={kaneki} />
                 </MenuButton>
                 <MenuList alignItems={'center'}>
                   <br />
                   <Center>
-                    <Avatar
-                      size={'2xl'}
-                      src={'https://avatars.dicebear.com/api/male/username.svg'}
-                    />
+                    <Avatar size={'2xl'} src={kaneki} />
                   </Center>
                   <br />
                   <Center>
