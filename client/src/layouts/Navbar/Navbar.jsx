@@ -25,6 +25,7 @@ import {
   Stack,
   useColorMode,
   Center,
+  Heading,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import kaneki from '../../assets/kaneki.gif';
@@ -52,7 +53,9 @@ export default function Navbar() {
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box>RIOT API</Box>
+          <Box>
+            <Heading>RIOT API</Heading>
+          </Box>
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
@@ -70,6 +73,7 @@ export default function Navbar() {
                 >
                   <Avatar size={'sm'} src={kaneki} />
                 </MenuButton>
+
                 <MenuList alignItems={'center'}>
                   <br />
                   <Center>

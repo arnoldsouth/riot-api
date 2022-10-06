@@ -1,4 +1,4 @@
-const Config = {
+const config = {
   RIOT_TOKEN: 'RGAPI-43356eb4-3e14-4b16-9b2f-3b23b176c850',
   NA1_PLATFORM_URL: 'https://na1.api.riotgames.com',
   NA1_REGIONAL_URL: 'https://americas.api.riotgames.com',
@@ -6,4 +6,4 @@ const Config = {
   DDRAGON_PROFILE_ICONS: 'http://ddragon.leagueoflegends.com',
 };
 
-export default Config;
+export default config;

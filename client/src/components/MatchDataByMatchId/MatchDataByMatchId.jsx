@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Box, Button, Heading, Input, Stack, Text } from '@chakra-ui/react';
 
 const MatchDataByMatchId = () => {
   const [searchText, setSearchText] = useState('');
@@ -25,31 +26,61 @@ const MatchDataByMatchId = () => {
   console.log(gameList);
 
   return (
-    <div>
-      <h2>Match Data by Match ID</h2>
-      <input type="text" onChange={e => setSearchText(e.target.value)} />
-      <button onClick={getPlayerGames}>Get previous 5 matches</button>
+    <>
+      <Box ml={6} mr={6}>
+        <Box>
+          <Heading fontSize={'3xl'}>Match Data by Match ID</Heading>
 
-      {gameList.length !== 0 ? (
-        <>
-          {gameList.map((gameData, index) => (
+          <Input
+            boxSize={'auto'}
+            type="text"
+            onChange={e => setSearchText(e.target.value)}
+          />
+
+          <br />
+
+          <Button onClick={getPlayerGames}>Get Matches</Button>
+        </Box>
+
+        <br />
+
+        <Box
+        // boxSize={120}
+        // display={'flex'}
+        // alignContent={'flex-start'}
+        // justifyContent={'flex-start'}
+        >
+          {gameList.length !== 0 ? (
             <>
-              <h1>Game {index + 1}</h1>
-              <div>
-                {gameData.info.participants.map((data, participantIndex) => (
-                  <p>
-                    Summoner {participantIndex + 1}: {data.summonerName}, KDA:
-                    {data.kills}/{data.deaths}/{data.assists}
-                  </p>
-                ))}
-              </div>
+              {gameList.map((gameData, index) => (
+                <>
+                  <Heading fontSize={'lg'}>Game {index + 1}</Heading>
+
+                  {gameData.info.participants.map((data, participantIndex) => (
+                    <Box>
+                      <Stack>
+                        <Text
+                          fontSize={'sm'}
+                          // display={'flex'}
+                          // justifyContent={'center'}
+                        >
+                          {/* Summoner {participantIndex + 1}:  */}
+                          {data.summonerName} KDA: {data.kills} / {data.deaths}{' '}
+                          / {data.assists}
+                        </Text>
+                      </Stack>
+                    </Box>
+                  ))}
+                  <br />
+                </>
+              ))}
             </>
-          ))}
-        </>
-      ) : (
-        <></>
-      )}
-    </div>
+          ) : (
+            <></>
+          )}
+        </Box>
+      </Box>
+    </>
   );
 };
 

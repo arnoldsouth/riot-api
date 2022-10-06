@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import {
   ChakraProvider,
-  Box,
-  Text,
   Link,
   VStack,
   Code,
   Grid,
   theme,
 } from '@chakra-ui/react';
-
-// import { Logo } from './Logo';
-import SummonerDataByName from './components/SummonerDataByName/SummonerDataByName.jsx';
 import Navbar from './layouts/Navbar/Navbar.jsx';
+import customTheme from './styles/customTheme/customTheme.jsx';
+import './App.css';
+import SummonerDataByName from './components/SummonerDataByName/SummonerDataByName.jsx';
 import MatchDataByMatchId from './components/MatchDataByMatchId/MatchDataByMatchId.jsx';
 
 const App = () => {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={customTheme}>
       <Navbar />
       <SummonerDataByName />
       <MatchDataByMatchId />
