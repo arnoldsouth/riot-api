@@ -1,13 +1,4 @@
-// const Navbar = () => {
-//   return (
-//     <>
-//       <div />
-//     </>
-//   );
-// };
-
-// export default Navbar;
-
+import React from 'react';
 import { ReactNode } from 'react';
 import {
   Box,
@@ -25,12 +16,12 @@ import {
   Stack,
   useColorMode,
   Center,
-  Heading,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import kaneki from '../../assets/kaneki.gif';
+import kaneki from '../../../../assets/kaneki.gif';
+import Logo from '../../../ui/Logo/Logo.jsx';
 
-const NavLink = ({ children }: { children: ReactNode }) => (
+const MenuLink = ({ children, to = '/' }) => (
   <Link
     px={2}
     py={1}
@@ -39,14 +30,13 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={'#'}
+    href={to}
   >
     {children}
   </Link>
 );
 
-// export default function Nav() {
-export default function Navbar() {
+export default function Nav({ props }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -54,16 +44,20 @@ export default function Navbar() {
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Box>
-            <Heading>RIOT API</Heading>
+            <Logo />
           </Box>
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
-              <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </Button>
-
               <Menu>
+                <MenuButton to="/">Home</MenuButton>
+                <MenuButton to="/valorant">Valorant</MenuButton>
+                <MenuButton to="/leagueoflegends">League of Legends</MenuButton>
+
+                <Button onClick={toggleColorMode}>
+                  {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                </Button>
+
                 <MenuButton
                   as={Button}
                   rounded={'full'}
@@ -76,15 +70,21 @@ export default function Navbar() {
 
                 <MenuList alignItems={'center'}>
                   <br />
+
                   <Center>
                     <Avatar size={'2xl'} src={kaneki} />
                   </Center>
+
                   <br />
+
                   <Center>
                     <p>Username</p>
                   </Center>
+
                   <br />
+
                   <MenuDivider />
+
                   <MenuItem>Your Servers</MenuItem>
                   <MenuItem>Account Settings</MenuItem>
                   <MenuItem>Logout</MenuItem>
