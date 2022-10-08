@@ -21,10 +21,10 @@ import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import kaneki from '../../../../assets/kaneki.gif';
 import Logo from '../../../ui/Logo/Logo.jsx';
 
-const MenuLink = ({ children, to = '/' }) => (
+export const MenuLink = ({ children, to = '/' }) => (
   <Link
     px={2}
-    py={1}
+    py={2}
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
@@ -36,7 +36,7 @@ const MenuLink = ({ children, to = '/' }) => (
   </Link>
 );
 
-export default function Nav({ props }) {
+const Nav = ({ props }) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -47,12 +47,21 @@ export default function Nav({ props }) {
             <Logo />
           </Box>
 
-          <Flex alignItems={'center'}>
+          <Flex
+            alignItems={'center'}
+            as="nav"
+            align="center"
+            justify="space-between"
+            wrap="wrap"
+            // w="100%"
+            // mb={8}
+            // p={8}
+          >
             <Stack direction={'row'} spacing={7}>
               <Menu>
-                <MenuButton to="/">Home</MenuButton>
-                <MenuButton to="/valorant">Valorant</MenuButton>
-                <MenuButton to="/leagueoflegends">League of Legends</MenuButton>
+                <MenuLink to="/">Home</MenuLink>
+                <MenuLink to="/valorant">Valorant</MenuLink>
+                <MenuLink to="/leagueoflegends">League of Legends</MenuLink>
 
                 <Button onClick={toggleColorMode}>
                   {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
@@ -85,7 +94,7 @@ export default function Nav({ props }) {
 
                   <MenuDivider />
 
-                  <MenuItem>Your Servers</MenuItem>
+                  <MenuItem>Your Games</MenuItem>
                   <MenuItem>Account Settings</MenuItem>
                   <MenuItem>Logout</MenuItem>
                 </MenuList>
@@ -96,4 +105,6 @@ export default function Nav({ props }) {
       </Box>
     </>
   );
-}
+};
+
+export default Nav;

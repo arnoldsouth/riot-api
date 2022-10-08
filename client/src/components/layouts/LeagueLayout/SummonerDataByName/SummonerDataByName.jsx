@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import config from '../../config/config.jsx';
+import config from '../../../../config/config.jsx';
 import { Box, Button, Heading, Input, Text } from '@chakra-ui/react';
 
 const API_KEY = config.RIOT_TOKEN;
