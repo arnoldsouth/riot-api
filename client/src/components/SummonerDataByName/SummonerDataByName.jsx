@@ -3,8 +3,6 @@ import axios from 'axios';
 import config from '../../config/config.jsx';
 import { Box, Button, Heading, Input, Text } from '@chakra-ui/react';
 
-// import './SummonerDataByName.scss';
-
 const API_KEY = config.RIOT_TOKEN;
 const DDRAGON_VERSION = config.DDRAGON_VERSION;
 const NA1_PLATFORM_ROUTING_URL = config.NA1_PLATFORM_URL;
