@@ -70,6 +70,7 @@ Get all champions
 `/api/champions/all`
 
 Get all info for specific champion
+
 `/api/champions/champ/:name`
 
 Current Free Champion Rotation
