@@ -30,49 +30,49 @@
 
 ## Routes: League of Legends
 
-#### API Server Test Running
+API Server Test Running
 
 `/api`
 
 ### Summoner
 
-#### Summoner Test Running
+Summoner Test Running
 
 `/api/summoner`
 
-#### Return data for a summoner
+Return data for a summoner
 
 `/api/summoner/:region&:name`
 `/api/summoner/puuid/:region&:name`
 
-#### Return icon url for a summoner
+Return icon url for a summoner
 
 `/api/summoner/icon/:id`
 
 ### Matches
 
-#### Matches Test Running
+Matches Test Running
 
 `/api/matches`
 
-#### Return recent matches for a summoner
+Return recent matches for a summoner
 
 `/api/matches/:region&:puuid&:count`
 
 ### Champions
 
-#### Champions Test Running
+Champions Test Running
 
 `/api/champions`
 
-#### Get all champions
+Get all champions
 
 `/api/champions/all`
 
-#### Get all info for specific champion
+Get all info for specific champion
 
 `/api/champions/champ/:name`
 
-#### Current Free Champion Rotation
+Current Free Champion Rotation
 
 `/api/champions/free/:region`
