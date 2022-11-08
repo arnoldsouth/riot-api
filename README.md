@@ -1,8 +1,8 @@
 # RIOT-API Player Stat Tracking Web App
 
-## Frontend Notes (client/)
+## Frontend Notes (client)
 
-## Backend Notes (server/)
+## Backend Notes (server)
 
 #### Description: A simple player stat tracking web app using Riot Games' Official API endpoints
 
@@ -28,11 +28,9 @@
     "nodemon": "2.0.15",
     "response-time": "^2.3.2"
 
-## League of Legends
+## Routes: League of Legends
 
-#### Routes
-
-### API Server Test Running
+#### API Server Test Running
 
 `/api`
 
