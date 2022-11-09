@@ -1,4 +1,4 @@
-import "./LandingLayout.scss";
+import './LandingLayout.scss';
 
 const LandingLayout = () => {
   return (
