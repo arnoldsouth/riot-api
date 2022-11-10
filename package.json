@@ -1,28 +1,28 @@
 {
-    "name": "riot-api",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-        "client": "npm start --prefix client",
-        "server": "nodemon server/server.js",
-        "dev": "concurrently \"npm run server\" \"npm run client\"",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/arnoldsouth/riot-api.git"
-    },
-    "author": "Arnold Southammavong",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/arnoldsouth/riot-api/issues"
-    },
-    "homepage": "https://github.com/arnoldsouth/riot-api#readme",
-    "devDependencies": {
-        "concurrently": "^7.4.0"
-    },
-    "dependencies": {
-        "nodemon": "^2.0.20"
-    }
+  "name": "riot-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "client": "npm start --prefix riot-api-client",
+    "server": "nodemon riot-api-server/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnoldsouth/riot-api.git"
+  },
+  "author": "Arnold Southammavong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arnoldsouth/riot-api/issues"
+  },
+  "homepage": "https://github.com/arnoldsouth/riot-api#readme",
+  "devDependencies": {
+    "concurrently": "^7.4.0"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
